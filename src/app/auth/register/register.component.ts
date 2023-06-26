@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Route, Router } from '@angular/router';
+import { User } from '../shared/user.model';
 
 @Component({
   selector: 'app-register',

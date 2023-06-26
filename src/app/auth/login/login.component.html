@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="container">
     <nz-card class="register-card">
-      <h1 class="title">Đăng ký</h1>
+      <h1 class="title">Đăng nhập</h1>
       <form
         nz-form
         nzLayout="vertical"
         class="register-form"
-        [formGroup]="registerForm"
+        [formGroup]="loginForm"
         (ngSubmit)="onSubmit()"
       >
         <nz-form-item>
@@ -43,14 +43,14 @@
               nz-button
               nzBlock
               nzType="primary"
-              [disabled]="!registerForm.valid"
+              [disabled]="!loginForm.valid"
             >
-              Đăng ký
+              Đăng nhập
             </button>
           </nz-form-control>
         </nz-form-item>
       </form>
-      <a routerLink="/auth/login" class="title">Đăng nhập</a>
+      <a routerLink="/auth/register" class="title">Đăng ký</a>
     </nz-card>
   </div>
 </div>

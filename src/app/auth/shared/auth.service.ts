@@ -11,7 +11,11 @@ export class AuthService {
   API_URL = environment.BASE_URL;
   constructor(private http: HttpClient) {}
 
-  register(data: any): Observable<User> {
+  register(data: Partial<User>): Observable<User> {
     return this.http.post<User>(`${this.API_URL}/auth/register`, data);
+  }
+
+  login(data: Partial<User>): Observable<User> {
+    return this.http.post<User>(`${this.API_URL}/auth/login`, data);
   }
 }

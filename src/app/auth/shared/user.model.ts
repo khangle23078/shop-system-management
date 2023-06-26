@@ -1,4 +1,6 @@
 export interface User {
-  email: string;
-  password: string;
+  email: string | null;
+  password: string | null;
+  accessToken: string | null;
+  refreshToken: string | null;
 }
