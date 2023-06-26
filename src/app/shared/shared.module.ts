@@ -5,6 +5,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
     NzButtonModule,
     NzCardModule,
     NzMessageModule,
+    NzLayoutModule,
   ],
 })
 export class SharedModule {}

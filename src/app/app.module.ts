@@ -11,21 +11,35 @@ import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { LayoutComponent } from './layout/layout.component';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { IconDefinition } from '@ant-design/icons-angular';
+import {
+  MenuFoldOutline,
+  MenuUnfoldOutline,
+} from '@ant-design/icons-angular/icons';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
 if (enviroment.production) {
   enableProdMode();
 }
-
+const icons: IconDefinition[] = [MenuFoldOutline, MenuUnfoldOutline];
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NzLayoutModule,
+    NzBreadCrumbModule,
+    NzMenuModule,
+    NzIconModule.forChild(icons),
     BrowserAnimationsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
