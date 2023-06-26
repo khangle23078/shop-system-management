@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <div class="container">
+    <nz-card class="register-card">
+      <h1 class="title">Đăng ký</h1>
+      <form
+        nz-form
+        nzLayout="vertical"
+        class="register-form"
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Email</nz-form-label>
+          <nz-form-control nzHasFeedback [nzErrorTip]="emailErrorTpl">
+            <input nz-input formControlName="email" type="email" />
+            <ng-template #emailErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('email')"
+                >Vui lòng nhập đúng địng dạng email!</ng-container
+              >
+              <ng-container *ngIf="control.hasError('required')"
+                >Vui lòng nhập mail!</ng-container
+              >
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Mật khẩu</nz-form-label>
+          <nz-form-control nzHasFeedback [nzErrorTip]="passwordError">
+            <input nz-input type="password" formControlName="password" />
+            <ng-template #passwordError let-control>
+              <ng-container *ngIf="control.hasError('required')"
+                >Vui lòng nhập mật khẩu!</ng-container
+              >
+              <ng-container *ngIf="control.hasError('minlength')"
+                >Mật khẩu phải tối thiểu 6 ký tự!</ng-container
+              >
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button
+              nz-button
+              nzBlock
+              nzType="primary"
+              [disabled]="!registerForm.valid"
+            >
+              Đăng ký
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-card>
+  </div>
+</div>
