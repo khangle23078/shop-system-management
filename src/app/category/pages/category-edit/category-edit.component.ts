@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -12,7 +12,7 @@ import { ICategory } from '../../model/category.model';
   styleUrls: ['./category-edit.component.css'],
 })
 export class CategoryEditComponent implements OnInit {
-  categoryEditForm = this.fb.group({
+  categoryEditForm: FormGroup = this.fb.group({
     name: this.fb.control('', [Validators.required]),
   });
 
@@ -41,5 +41,10 @@ export class CategoryEditComponent implements OnInit {
 
   onSubmit(): void {
     const id = this.activedRoute.snapshot.paramMap.get('id');
+    const data = this.categoryEditForm.value;
+    this.categoryService.editById(id, data).subscribe(() => {
+      this.message.success('Sửa danh mục thành công');
+      this.router.navigateByUrl('/admin/category');
+    });
   }
 }

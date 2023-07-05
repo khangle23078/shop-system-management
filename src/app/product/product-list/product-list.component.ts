@@ -25,7 +25,6 @@ export class ProductListComponent implements OnInit {
     this.productService
       .getAll()
       .subscribe(({ data }: IResponse<IProduct[]>) => {
-        console.log(data);
         this.products = data;
       });
   }
