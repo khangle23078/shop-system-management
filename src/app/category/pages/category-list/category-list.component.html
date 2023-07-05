@@ -1,0 +1,29 @@
+<nz-breadcrumb class="breadcrumb">
+  <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+  <nz-breadcrumb-item>
+    <a>Danh mục</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>Danh sách danh mục</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-card>
+  <nz-table [nzData]="categories">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tên danh mục</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ category.name }}</td>
+        <td>
+          <a nz-button nzType="primary" routerLink=""> Sửa </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a nz-button nzType="default">Xóa</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

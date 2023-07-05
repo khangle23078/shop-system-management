@@ -26,7 +26,6 @@ export class ProductListComponent implements OnInit {
       .getAll()
       .subscribe(({ data }: IResponse<IProduct[]>) => {
         console.log(data);
-
         this.products = data;
       });
   }
