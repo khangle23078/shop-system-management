@@ -28,7 +28,17 @@
             Sửa
           </a>
           <nz-divider nzType="vertical"></nz-divider>
-          <a nz-button nzType="default">Xóa</a>
+          <a
+            nz-button
+            nzOkText="Xóa"
+            nzCancelText="Không"
+            nz-popconfirm
+            nzPopconfirmTitle="Bạn có chắc muốn xóa không?"
+            nzPopconfirmPlacement="bottom"
+            (nzOnConfirm)="onDelete(category._id)"
+          >
+            Delete
+          </a>
         </td>
       </tr>
     </tbody>

@@ -30,4 +30,11 @@ export class CategoryService {
       data
     );
   }
+
+  deleteById(id: string): Observable<ICategory> {
+    return this.http.post<ICategory>(
+      `${this.API_URL}/category/deleteById/${id}`,
+      id
+    );
+  }
 }

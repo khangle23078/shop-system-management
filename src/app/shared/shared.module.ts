@@ -10,6 +10,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzDividerModule,
     NzBreadCrumbModule,
     NzAvatarModule,
+    NzPopconfirmModule,
   ],
 })
 export class SharedModule {}
