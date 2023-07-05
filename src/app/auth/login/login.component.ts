@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { UserService } from 'src/app/core/services/user.service';
-import { User } from '../shared/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +23,8 @@ export class LoginComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
-    private message: NzMessageService
+    private message: NzMessageService,
+    private router: Router
   ) {}
 
   onSubmit(): void {
@@ -31,6 +32,7 @@ export class LoginComponent {
       try {
         this.userService.saveUser(data);
         this.message.success('Đăng nhập thành công!');
+        this.router.navigateByUrl('/admin/product');
       } catch (error) {
         this.message.warning('Đăng nhập thất bại');
       }

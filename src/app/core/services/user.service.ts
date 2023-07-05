@@ -10,4 +10,10 @@ export class UserService {
   saveUser(data: User) {
     return localStorage.setItem('user', JSON.stringify(data));
   }
+
+  getUser() {
+    const user: User = JSON.parse(localStorage.getItem('user') as string);
+
+    return user;
+  }
 }

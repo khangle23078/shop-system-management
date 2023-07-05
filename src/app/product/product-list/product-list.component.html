@@ -1,1 +1,39 @@
-<p>product-list works!</p>
+<nz-breadcrumb class="breadcrumb">
+  <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+  <nz-breadcrumb-item>
+    <a>Sản phẩm</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>Danh sách sản phẩm</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-card>
+  <nz-table [nzData]="products">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Hình ảnh</th>
+        <th>Tên sp</th>
+        <th>Giá sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Mô tả</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <nz-avatar nzSize="large" [nzSrc]="product.image.url"> </nz-avatar>
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.origin_price | currency }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.desc }}</td>
+        <td>
+          <a nz-button nzType="primary" routerLink=""> Sửa </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a nz-button nzType="default">Xóa</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

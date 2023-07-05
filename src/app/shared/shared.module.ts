@@ -6,6 +6,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   declarations: [],
@@ -17,6 +21,10 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     NzCardModule,
     NzMessageModule,
     NzLayoutModule,
+    NzTableModule,
+    NzDividerModule,
+    NzBreadCrumbModule,
+    NzAvatarModule,
   ],
 })
 export class SharedModule {}
