@@ -6,7 +6,8 @@
   <nz-breadcrumb-item>Danh sách danh mục</nz-breadcrumb-item>
 </nz-breadcrumb>
 <nz-card>
-  <nz-table [nzData]="categories">
+  <a nz-button nzType="primary" routerLink="add">Thêm mới</a>
+  <nz-table class="table" [nzData]="categories">
     <thead>
       <tr>
         <th>Id</th>

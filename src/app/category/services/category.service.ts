@@ -24,6 +24,10 @@ export class CategoryService {
     );
   }
 
+  create(data: ICategory): Observable<ICategory> {
+    return this.http.post<ICategory>(`${this.API_URL}/category/create`, data);
+  }
+
   editById(id: string | null, data: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(
       `${this.API_URL}/category/updateById/${id}`,

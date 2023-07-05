@@ -5,9 +5,10 @@ import { CategoryListComponent } from './pages/category-list/category-list.compo
 import { SharedModule } from '../shared/shared.module';
 import { CategoryEditComponent } from './pages/category-edit/category-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryAddComponent } from './pages/category-add/category-add.component';
 
 @NgModule({
-  declarations: [CategoryListComponent, CategoryEditComponent],
+  declarations: [CategoryListComponent, CategoryEditComponent, CategoryAddComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

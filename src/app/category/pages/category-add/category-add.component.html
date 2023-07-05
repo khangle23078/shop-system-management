@@ -1,0 +1,23 @@
+<nz-breadcrumb class="breadcrumb">
+  <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+  <nz-breadcrumb-item>Danh mục</nz-breadcrumb-item>
+  <nz-breadcrumb-item>Thêm danh mục</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-card>
+  <form
+    nz-form
+    nzLayout="vertical"
+    [formGroup]="categoryAddForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <nz-form-label [nzFor]="'name'">Tên danh mục</nz-form-label>
+      <nz-form-item>
+        <input nz-input type="text" formControlName="name" />
+      </nz-form-item>
+    </nz-form-control>
+    <button nz-button [nzType]="'primary'" [disabled]="categoryAddForm.invalid">
+      Thêm mới
+    </button>
+  </form>
+</nz-card>
