@@ -17,4 +17,10 @@ export class CategoryService {
       `${this.API_URL}/category/getAll`
     );
   }
+
+  getById(id: string | null): Observable<IResponse<ICategory>> {
+    return this.http.get<IResponse<ICategory>>(
+      `${this.API_URL}/category/getById/${id}`
+    );
+  }
 }
