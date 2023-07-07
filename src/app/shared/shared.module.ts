@@ -11,6 +11,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @NgModule({
   declarations: [],
@@ -27,6 +29,8 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     NzBreadCrumbModule,
     NzAvatarModule,
     NzPopconfirmModule,
+    NzInputNumberModule,
+    NzGridModule,
   ],
 })
 export class SharedModule {}

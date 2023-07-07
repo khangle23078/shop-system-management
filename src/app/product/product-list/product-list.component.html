@@ -6,6 +6,7 @@
   <nz-breadcrumb-item>Danh sách sản phẩm</nz-breadcrumb-item>
 </nz-breadcrumb>
 <nz-card>
+  <a nz-button nzType="primary" routerLink="add">Thêm mới</a>
   <nz-table [nzData]="products">
     <thead>
       <tr>
@@ -22,7 +23,7 @@
       <tr *ngFor="let product of products; let i = index">
         <td>{{ i + 1 }}</td>
         <td>
-          <nz-avatar nzSize="large" [nzSrc]="product.image.url"> </nz-avatar>
+          <nz-avatar nzSize="large" [nzSrc]="product?.image?.url"> </nz-avatar>
         </td>
         <td>{{ product.name }}</td>
         <td>{{ product.origin_price | currency }}</td>

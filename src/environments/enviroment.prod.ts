@@ -1,4 +1,4 @@
 export const enviroment = {
   production: true,
-  apiKey: 'prodKey',
+  BASE_URL: 'https://onemobie.onrender.com/api/v1',
 };
