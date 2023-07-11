@@ -34,4 +34,11 @@ export class ProductService {
       data
     );
   }
+
+  deleteById(id: string | null): Observable<IProduct> {
+    return this.http.post<IProduct>(
+      `${this.API_URL}/product/deleteById/${id}`,
+      id
+    );
+  }
 }

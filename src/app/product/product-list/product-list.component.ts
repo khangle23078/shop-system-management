@@ -3,6 +3,7 @@ import { IProduct } from '../shared/product.model';
 import { ProductService } from '../shared/product.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { IResponse } from 'src/app/shared/model/response.model';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,8 @@ export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
   constructor(
     private productService: ProductService,
-    private userService: UserService
+    private userService: UserService,
+    private message: NzMessageService
   ) {}
 
   ngOnInit(): void {
@@ -27,5 +29,12 @@ export class ProductListComponent implements OnInit {
       .subscribe(({ data }: IResponse<IProduct[]>) => {
         this.products = data;
       });
+  }
+
+  onDelete(id: string | null) {
+    this.productService.deleteById(id).subscribe(() => {
+      this.message.success('Xóa thành công');
+      this.getProducts();
+    });
   }
 }
