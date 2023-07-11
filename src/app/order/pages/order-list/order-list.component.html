@@ -1,0 +1,51 @@
+<nz-breadcrumb class="breadcrumb">
+  <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+  <nz-breadcrumb-item>
+    <a>Đơn hàng</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>Danh sách đơn hàng</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-card>
+  <nz-table class="table" [nzData]="orders">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tên khách hàng</th>
+        <th>Địa chỉ</th>
+        <th>Số điện thoại</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.full_name }}</td>
+        <td>{{ order.address }}</td>
+        <td>{{ order.phone_number }}</td>
+        <td>{{ order.status }}</td>
+        <td>
+          <a
+            nz-button
+            nzType="primary"
+            [routerLink]="['edit/', order._id]"
+            routerLinkActive="router-link-active"
+          >
+            Xem chi tiết
+          </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a
+            nz-button
+            nzOkText="Xóa"
+            nzCancelText="Không"
+            nz-popconfirm
+            nzPopconfirmTitle="Bạn có chắc muốn xóa không?"
+            nzPopconfirmPlacement="top"
+          >
+            Xóa
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

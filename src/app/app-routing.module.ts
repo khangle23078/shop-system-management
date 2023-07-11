@@ -17,14 +17,24 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: 'category',
+        loadChildren: () =>
+          import('./category/category.module').then((m) => m.CategoryModule),
+      },
+      {
         path: 'product',
         loadChildren: () =>
           import('./product/product.module').then((m) => m.ProductModule),
       },
       {
-        path: 'category',
+        path: 'order',
         loadChildren: () =>
-          import('./category/category.module').then((m) => m.CategoryModule),
+          import('./order/order.module').then((m) => m.OrderModule),
+      },
+      {
+        path: '',
+        redirectTo: 'product',
+        pathMatch: 'full',
       },
     ],
   },
