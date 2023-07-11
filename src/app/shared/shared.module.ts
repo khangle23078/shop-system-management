@@ -13,6 +13,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     NzPopconfirmModule,
     NzInputNumberModule,
     NzGridModule,
+    NzSelectModule,
   ],
 })
 export class SharedModule {}

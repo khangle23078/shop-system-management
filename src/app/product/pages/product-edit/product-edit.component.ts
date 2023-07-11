@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { ProductService } from '../shared/product.service';
-import { IProduct } from '../shared/product.model';
+import { ProductService } from '../../services/product.service';
+import { IProduct } from '../../model/product.model';
 import { IResponse } from 'src/app/shared/model/response.model';
 
 @Component({
