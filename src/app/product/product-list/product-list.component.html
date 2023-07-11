@@ -30,7 +30,14 @@
         <td>{{ product.quantity }}</td>
         <td>{{ product.desc }}</td>
         <td>
-          <a nz-button nzType="primary" routerLink=""> Sửa </a>
+          <a
+            nz-button
+            nzType="primary"
+            [routerLink]="['edit', product._id]"
+            routerLinkActive="router-link-active"
+          >
+            Sửa
+          </a>
           <nz-divider nzType="vertical"></nz-divider>
           <a nz-button nzType="default">Xóa</a>
         </td>

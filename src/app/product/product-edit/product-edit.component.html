@@ -1,0 +1,58 @@
+<nz-breadcrumb class="breadcrumb">
+  <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+  <nz-breadcrumb-item>Sản phẩm</nz-breadcrumb-item>
+  <nz-breadcrumb-item>Sửa sản phẩm</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-card>
+  <form
+    nz-form
+    nzLayout="vertical"
+    [formGroup]="productEditForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <nz-form-control nzSpan="12">
+      <nz-form-label>Tên sản phẩm</nz-form-label>
+      <nz-form-item>
+        <input nz-input formControlName="name" />
+      </nz-form-item>
+    </nz-form-control>
+    <nz-form-control nzSpan="12">
+      <nz-form-label>Giá</nz-form-label>
+      <nz-form-item>
+        <input
+          type="number"
+          [min]="1"
+          nz-input
+          formControlName="origin_price"
+        />
+      </nz-form-item>
+    </nz-form-control>
+    <nz-form-control nzSpan="12">
+      <nz-form-label>Số lượng</nz-form-label>
+      <nz-form-item>
+        <nz-input-number [nzMin]="1" formControlName="quantity" />
+      </nz-form-item>
+    </nz-form-control>
+    <nz-form-control nzSpan="12">
+      <nz-form-label>Mô tả sản phẩm</nz-form-label>
+      <nz-textarea-count [nzMaxCharacterCount]="1000">
+        <textarea
+          nz-input
+          formControlName="desc"
+          placeholder="Mô tả sản phẩm"
+        ></textarea>
+      </nz-textarea-count>
+    </nz-form-control>
+    <nz-form-control>
+      <button
+        class="btn-edit"
+        nz-button
+        nzType="primary"
+        [disabled]="productEditForm.invalid"
+      >
+        Sửa
+      </button>
+      <a nz-button routerLink="/admin/product">Hủy</a>
+    </nz-form-control>
+  </form>
+</nz-card>

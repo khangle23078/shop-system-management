@@ -18,7 +18,20 @@ export class ProductService {
     );
   }
 
+  getById(id: string | null): Observable<IResponse<IProduct>> {
+    return this.http.get<IResponse<IProduct>>(
+      `${this.API_URL}/product/getById/${id}`
+    );
+  }
+
   create(data: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(`${this.API_URL}/product/create`, data);
+  }
+
+  edit(id: string | null, data: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>(
+      `${this.API_URL}/product/updateById/${id}`,
+      data
+    );
   }
 }
