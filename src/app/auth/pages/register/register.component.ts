@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../shared/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Route, Router } from '@angular/router';
-import { User } from '../shared/user.model';
+import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-register',
