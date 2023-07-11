@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../shared/product.model';
-import { ProductService } from '../shared/product.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { IResponse } from 'src/app/shared/model/response.model';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { IProduct } from '../../model/product.model';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',

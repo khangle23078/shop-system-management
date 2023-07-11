@@ -1,4 +1,4 @@
-import { IProduct } from 'src/app/product/shared/product.model';
+import { IProduct } from 'src/app/product/model/product.model';
 
 export interface IOrder {
   _id: string;

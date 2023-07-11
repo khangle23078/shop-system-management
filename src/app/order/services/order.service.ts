@@ -15,11 +15,4 @@ export class OrderService {
   getAll(): Observable<IResponse<IOrder[]>> {
     return this.http.get<IResponse<IOrder[]>>(`${this.API_URL}/order/getAll`);
   }
-
-  getById(id: string | null, data: string): Observable<IResponse<IOrder>> {
-    return this.http.post<IResponse<IOrder>>(
-      `${this.API_URL}/order/updateById/${id}`,
-      data
-    );
-  }
 }

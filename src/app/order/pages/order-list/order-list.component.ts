@@ -10,6 +10,9 @@ import { IResponse } from 'src/app/shared/model/response.model';
 })
 export class OrderListComponent implements OnInit {
   orders: IOrder[] = [];
+  order = {
+    status: '',
+  };
   constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
