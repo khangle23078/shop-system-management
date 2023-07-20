@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { Route, Router } from '@angular/router';
-import { User } from '../../model/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -29,13 +28,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.authService.register(this.registerForm.value).subscribe(() => {
-      try {
+    this.authService.register(this.registerForm.value).subscribe({
+      next: () => {
         this.message.success('Đăng ký thành công!');
         this.router.navigateByUrl('/auth/login');
-      } catch (error: unknown) {
-        this.message.warning(error as string);
-      }
+      },
+      error: () => {
+        this.message.success('Đăng ký thất bại!');
+      },
     });
   }
 }

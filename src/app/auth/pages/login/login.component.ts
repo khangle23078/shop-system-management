@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { UserService } from 'src/app/core/services/user.service';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -28,14 +29,15 @@ export class LoginComponent {
   ) {}
 
   onSubmit(): void {
-    this.authService.login(this.loginForm.value).subscribe(({ data }: any) => {
-      try {
+    this.authService.login(this.loginForm.value).subscribe({
+      next: ({ data }: any) => {
         this.userService.saveUser(data);
         this.message.success('Đăng nhập thành công!');
         this.router.navigateByUrl('/admin/product');
-      } catch (error) {
-        this.message.warning('Đăng nhập thất bại');
-      }
+      },
+      error: (error: HttpErrorResponse) => {
+        this.message.warning(`Đăng nhập thất bại`);
+      },
     });
   }
 }
