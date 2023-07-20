@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  BASE_URL: 'https://onemobie.onrender.com/api/v1',
+  BASE_URL: 'http://localhost:8001/api/v1',
 };
