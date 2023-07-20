@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigateByUrl('/auth/login');
       },
       error: () => {
-        this.message.success('Đăng ký thất bại!');
+        this.message.warning('Đăng ký thất bại!');
       },
     });
   }
